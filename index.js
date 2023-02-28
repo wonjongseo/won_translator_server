@@ -8,6 +8,9 @@ var client_secret = process.env.SECRETKEY;
 
 const port = process.env.PORT || 3000;
 console.log(process.env.ID);
+app.get("/", async (req, res) => {
+  return res.json("hello");
+});
 app.get("/translate", function (req, res) {
   console.log("req.query", req.query);
 
