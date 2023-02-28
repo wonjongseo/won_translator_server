@@ -1,10 +1,12 @@
 require("dotenv").config();
+
 var express = require("express");
 var app = express();
 var request = require("request");
 var client_id = process.env.ID;
 var client_secret = process.env.SECRETKEY;
 
+const port = process.env.PORT || 3000;
 console.log(process.env.ID);
 app.get("/translate", function (req, res) {
   console.log("req.query", req.query);
@@ -35,6 +37,6 @@ app.get("/translate", function (req, res) {
     }
   });
 });
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log("http://localhost:3000/translate app listening on port 3000!");
 });
